@@ -1,0 +1,134 @@
+Type "STOP" to quit the program.       
+Input a string of any type of brackets:
+(
+Pushing '('
+WRONG! Parentheses are NOT balanced.    
+----------------------------------------
+
+Type "STOP" to quit the program.        
+Input a string of any type of brackets: 
+)
+
+EmptyCollectionException: The stack is empty.
+
+WRONG! Parentheses are NOT balanced.
+----------------------------------------     
+
+Type "STOP" to quit the program.
+Input a string of any type of brackets:      
+()
+Pushing '('
+Popped '(', after finding closing bracket ')'
+CORRECT! Parentheses are balanced.
+----------------------------------------     
+
+Type "STOP" to quit the program.
+Input a string of any type of brackets:      
+(}
+Pushing '('
+Popped '(', after finding closing bracket '}'
+} and ( do not match
+WRONG! Parentheses are NOT balanced.
+----------------------------------------     
+
+Type "STOP" to quit the program.
+Input a string of any type of brackets:      
+(()
+Pushing '('
+Pushing '('
+Popped '(', after finding closing bracket ')'
+WRONG! Parentheses are NOT balanced.
+----------------------------------------
+
+Type "STOP" to quit the program.
+Input a string of any type of brackets:
+())
+Pushing '('
+Popped '(', after finding closing bracket ')'
+
+EmptyCollectionException: The stack is empty.
+
+WRONG! Parentheses are NOT balanced.
+----------------------------------------
+
+Type "STOP" to quit the program.
+Input a string of any type of brackets:
+({[]})
+Pushing '('
+Pushing '{'
+Pushing '['
+Popped '[', after finding closing bracket ']'
+Popped '{', after finding closing bracket '}'
+Popped '(', after finding closing bracket ')'
+CORRECT! Parentheses are balanced.
+----------------------------------------
+
+Type "STOP" to quit the program.
+Input a string of any type of brackets:
+[({[]})({[]})]
+Pushing '['
+Pushing '('
+Pushing '{'
+Pushing '['
+Popped '[', after finding closing bracket ']'
+Popped '{', after finding closing bracket '}'
+Popped '(', after finding closing bracket ')'
+Pushing '('
+Pushing '{'
+Pushing '['
+Popped '[', after finding closing bracket ']'
+Popped '{', after finding closing bracket '}'
+Popped '(', after finding closing bracket ')'
+Popped '[', after finding closing bracket ']'
+CORRECT! Parentheses are balanced.
+----------------------------------------
+
+Type "STOP" to quit the program.
+Input a string of any type of brackets:
+[[({[]})({[]})]                                      
+Pushing '['
+Pushing '['
+Pushing '('
+Pushing '{'
+Pushing '['
+Popped '[', after finding closing bracket ']'
+Popped '{', after finding closing bracket '}'
+Popped '(', after finding closing bracket ')'
+Pushing '('
+Pushing '{'
+Pushing '['
+Popped '[', after finding closing bracket ']'
+Popped '{', after finding closing bracket '}'
+Popped '(', after finding closing bracket ')'
+Popped '[', after finding closing bracket ']'
+WRONG! Parentheses are NOT balanced.
+----------------------------------------
+
+Type "STOP" to quit the program.
+Input a string of any type of brackets:
+[({[]})({[]})]]
+Pushing '['
+Pushing '('
+Pushing '{'
+Pushing '['
+Popped '[', after finding closing bracket ']'
+Popped '{', after finding closing bracket '}'
+Popped '(', after finding closing bracket ')'
+Pushing '('
+Pushing '{'
+Pushing '['
+Popped '[', after finding closing bracket ']'
+Popped '{', after finding closing bracket '}'
+Popped '(', after finding closing bracket ')'
+Popped '[', after finding closing bracket ']'
+
+EmptyCollectionException: The stack is empty.
+
+WRONG! Parentheses are NOT balanced.
+----------------------------------------
+
+Type "STOP" to quit the program.
+Input a string of any type of brackets:
+STOP
+WRONG! Parentheses are NOT balanced.
+----------------------------------------
