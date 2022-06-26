@@ -1,0 +1,86 @@
+/*
+   Millenium Computers - Form Style Sheet
+   Author: Martin Atanacio
+   Date:   24th May 2022
+
+   Filename: oform.css
+*/
+
+form#cOrder {
+   display: flex;
+   flex-flow: row wrap;
+}
+
+.optGroup {
+   border: none;
+}
+
+.optWarranty {
+   width: 100%;
+   margin-bottom: 2em;
+   margin-left: 0.6em;
+}
+
+.optRequest {
+   display: flex;
+   flex-flow: column wrap;
+   margin: 7px 0px;
+   margin-left: 0.7em;
+}
+
+form#cOrder > fieldset {
+   flex: 1 1 300px;
+   font-size: 0.85em;
+   padding: 10px;
+   margin: 10px;
+}
+
+div.formRow {
+   display: flex;
+   flex-flow: row wrap;
+   margin: 7px 0px;
+}
+
+div.formRow > * {
+   flex: 1 1 150px;
+}
+
+legend {
+   color: black;
+   padding: 5px;
+}
+
+textarea {
+   margin-top: 10px;
+   height: 100px;
+   width: 95%;
+}
+
+div#buttons {
+   text-align: center;
+   width: 100%;
+   display: flex;
+   flex-flow: row;
+   margin: 1em 0 2em 0.7em;
+   column-gap: 0.5em;
+}
+
+input#fName:focus:invalid,
+input#lName:focus:invalid,
+input#street:focus:invalid,
+input#province:focus:invalid,
+input#postcode:focus:invalid,
+input#phone:focus:invalid,
+input#city:focus:invalid {
+   background: rgb(255, 232, 233) url(images/mc_stop.png) bottom right/contain no-repeat;
+}
+
+input#fName:focus:valid,
+input#lName:focus:valid,
+input#street:focus:valid,
+input#province:focus:valid,
+input#postcode:focus:valid,
+input#phone:focus:valid,
+input#city:focus:valid {
+   background: rgb(220, 255, 220) url(images/mc_go.png) bottom right/contain no-repeat;
+}
