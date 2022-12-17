@@ -1,0 +1,17 @@
+print("Exc 3: \n")
+print("OOOOO")
+print("O   O")
+print("O   O")
+print("O   O")
+print("OOOOO\n")
+
+print("    A    ")
+print("   A A   ")
+print("  A   A  ")
+print(" A     A \n")
+
+print("     *")
+print("    **")
+print("   ***")
+print("  ****")
+print(" *****")
