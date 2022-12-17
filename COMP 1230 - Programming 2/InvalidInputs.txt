@@ -1,0 +1,18 @@
+InputTooShortException: --> Vinit Jangir <-- : Error on line 5 of text file.
+Input is incorrect. It should consist of 20 characters:
+Name (15 characters), Student No. (4 characters), and Program Initial (1 character). If necessary, fill out the name with extra spaces to the right so that it reaches the number of characters required.
+--------------------------------
+NumberFormatException: --> Wayn <-- : Error on line 6 of text file.
+Not a number!
+--------------------------------
+InvalidProgramException: --> e <-- : Error on line 6 of text file.
+The entered PROGRAM is not correct. The PROGRAM should ONLY contain one of the following:
+Letters C for (Computing), E for (Engineering), L for (Law) or N for (Nursing).
+--------------------------------
+InvalidStudentNumberException: --> 1110 <-- : Error on line 7 of text file.
+The entered STUDENT NUMBER is invalid. The STUDENT NUMBER should be a 4-digit number within the range of 3000 and 8000.
+--------------------------------
+InvalidProgramException: --> D <-- : Error on line 8 of text file.
+The entered PROGRAM is not correct. The PROGRAM should ONLY contain one of the following:
+Letters C for (Computing), E for (Engineering), L for (Law) or N for (Nursing).
+--------------------------------
