@@ -1,0 +1,64 @@
+/*
+   Millenium Computers Style Sheet
+   Author: Martin Atanacio
+   Date:   24th May 2022
+
+   Filename: mill.css
+*/
+
+html {
+     font-family: sans-serif;
+     height: 100%;
+}
+
+ul > li {
+     list-style: none;
+     text-decoration: none;
+     text-align: center;
+}
+
+ul > li > a {
+     color: black;
+     background-color: #e8e7fe;
+     border: 0.3em grey outset;
+     padding: 0.1em 0.6em;
+     text-decoration: none;
+     text-align: center;
+}
+
+ul {
+     display: flex;
+     flex-flow: row wrap;
+     column-gap: 0.5em;
+     justify-content: space-between;
+}
+
+nav {
+     margin-left: -2em;
+     margin-top: 2em;
+     margin-bottom: 2em;
+}
+
+@media only screen and (max-width: 900px) {
+     ul {
+          display: flex;
+          flex-flow: column wrap;
+          row-gap: 1.4em;
+          justify-content: space-between;
+     }
+}
+
+body {
+     min-height: 100%;
+     margin: 0px auto;
+     min-width: 320px;
+     max-width: 1020px;
+     width: 100%;
+}
+
+footer {
+     color: blue;
+     border-top: 2px solid blue;
+     padding: 20px 40px;
+     text-align: center;
+}
