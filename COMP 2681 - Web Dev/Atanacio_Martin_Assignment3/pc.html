@@ -1,0 +1,214 @@
+<!--
+   Millenium Computers
+   Author: Martin Atanacio
+   Date:   24th May 2022
+   Filename:pc.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="mill.css">
+     <link rel="stylesheet" href="oform.css">
+     <script src="formsubmit.js"></script>
+     <script src="modernizr-1.5.js"></script>
+     <title>Millenium Computers</title>
+</head>
+
+<body>
+
+     <!-- Header -->
+
+     <header>
+          <img src="images/mc_logo.png" alt="Millenium Computers Logo">
+
+          <nav>
+               <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Desktops</a></li>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Peripherals</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Shopping Cart</a></li>
+                    <li><a href="#">Contact Us</a></li>
+               </ul>
+          </nav>
+
+     </header>
+
+
+     <!-- Titles -->
+
+     <h1>Build Your Computer</h1>
+     <h4>* - required information</h4>
+
+     <!-- Form -->
+
+     <form id="cOrder" action="http://www.mill_computers.com/order/process.cgi" method="post">
+
+          <!-- Contact Information Fieldset -->
+
+          <fieldset id="contInfo">
+
+               <legend>Contact Information</legend>
+
+               <div class="formRow">
+                    <label for="fName">First Name *</label>
+                    <input type="text" name="fName" id="fName" required>
+               </div>
+
+               <div class="formRow">
+                    <label for="lName">Last Name *</label>
+                    <input type="text" name="lName" id="lName" required>
+               </div>
+
+               <div class="formRow">
+                    <label for="street">Street *</label>
+                    <input type="text" name="street" id="street" required>
+               </div>
+
+               <div class="formRow">
+                    <label for="city">City *</label>
+                    <input type="text" name="city" id="city" required>
+               </div>
+
+               <div class="formRow">
+                    <label for="province">State *</label>
+                    <input type="text" name="province" id="province" required>
+               </div>
+
+               <div class="formRow">
+                    <label for="postcode">ZIP *</label>
+                    <input type="text" name="postcode" id="postcode" required
+                         pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$">
+               </div>
+
+               <div class="formRow">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" name="phone" id="phone" required
+                         pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*">
+               </div>
+
+          </fieldset>
+
+          <!-- Computer Config Fieldset -->
+
+          <fieldset id="compConfig">
+
+               <!-- Select Options -->
+
+               <legend>Computer Configuration</legend>
+
+               <div class="formRow">
+                    <label for="pSpeed">Processor Speed</label>
+                    <select name="pSpeed" id="pSpeed">
+                         <option value="3.2GHz">3.2 GHz</option>
+                         <option value="4GHz">4 GHz</option>
+                         <option value="5.2GHz">5.2 GHz</option>
+                    </select>
+               </div>
+
+               <div class="formRow">
+                    <label for="mem">Memory</label>
+                    <select name="mem" id="mem">
+                         <option value="1 GB">1 GB</option>
+                         <option value="2 GB">2 GB</option>
+                         <option value="4 GB">4 GB</option>
+                         <option value="8 GB">8 GB</option>
+                    </select>
+               </div>
+
+               <div class="formRow">
+                    <label for="monitor">Monitor Size</label>
+                    <select name="monitor" id="monitor">
+                         <option value="15&quot">15"</option>
+                         <option value="17&quot">17"</option>
+                         <option value="19&quot">19"</option>
+                         <option value="21&quot">21"</option>
+                    </select>
+               </div>
+
+
+               <div class="formRow">
+                    <label for="hd">Hard Drive</label>
+                    <select name="hd" id="hd">
+                         <option value="240 GB">240 GB</option>
+                         <option value="500 GB">500 GB</option>
+                         <option value="750 GB">750 GB</option>
+                         <option value="1 TB">1 TB</option>
+                    </select>
+               </div>
+
+               <!-- Radio Options -->
+
+               <div class="formRow">
+                    <label for="dvd">DVD Burner</label>
+                    <fieldset class="optGroup">
+                         <label for="dvd">Yes</label>
+                         <input type="radio" value="Yes" name="ans1" id="dvd">
+                         <label for="dvd">No</label>
+                         <input type="radio" value="No" name="ans1" id="dvd">
+                    </fieldset>
+               </div>
+
+               <div class="formRow">
+                    <label for="tuner">LAN Card</label>
+                    <fieldset class="optGroup">
+                         <label for="tuner">Yes</label>
+                         <input type="radio" value="Yes" name="ans2" id="tuner">
+                         <label for="tuner">No</label>
+                         <input type="radio" value="No" name="ans2" id="tuner">
+                    </fieldset>
+               </div>
+
+               <div class="formRow">
+                    <label for="mCard">Media Card Reader</label>
+                    <fieldset class="optGroup">
+                         <label for="mCard">Yes</label>
+                         <input type="radio" value="Yes" name="ans3" id="mCard">
+                         <label for="mCard">No</label>
+                         <input type="radio" value="No" name="ans3" id="mCard">
+                    </fieldset>
+               </div>
+
+          </fieldset>
+
+          <!-- Other Information -->
+
+          <div class="optWarranty">
+               <input type="checkbox" name="warranty" id="warranty">
+               <label for="warranty">
+                    Yes, I want the 24-month extended warranty
+               </label>
+          </div>
+
+          <div class="optRequest">
+               <label for="specialRequest">
+                    Any special requests on your order?
+               </label>
+               <textarea type="text" name="specialRequest" id="specialRequest" rows="7" cols="70"> </textarea>
+          </div>
+
+          <!-- Order Buttons -->
+
+          <div id="buttons">
+               <button type="submit">Send Order</button>
+               <button type="reset">Cancel Order</button>
+               <button type="button">Contact Me</button>
+          </div>
+
+     </form>
+
+     <!-- Footer -->
+
+     <footer>
+          Millenium Computer • 100 Commerce Drive • Madison, WI 53597 • (608) 555-8441
+     </footer>
+
+</body>
+
+</html>

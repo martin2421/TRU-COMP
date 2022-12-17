@@ -1,0 +1,78 @@
+/* -------------------- FORM STYLES -------------------- */
+
+form {
+     display: flex;
+     flex-flow: column wrap;
+     margin: auto;
+     width: 100%;
+     padding-top: 50px;
+     padding-bottom: 40px;
+}
+
+form>fieldset {
+     margin-top: 10em;
+     border: none;
+     flex: 1 1 300px;
+     font-size: 30px;
+     padding: 60px;
+     margin: auto;
+     max-width: 50em;
+     text-align: left;
+}
+
+div.formRow {
+     display: flex;
+     flex-flow: row wrap;
+     margin: 7px 0px;
+}
+
+div.formRow>label {
+     margin-right: auto;
+}
+
+textarea {
+     margin-top: 10px;
+     height: 100px;
+     width: 95%;
+}
+
+.formBtns {
+     display: flex;
+     flex-direction: row;
+     margin: auto;
+     column-gap: 0.2em;
+}
+
+.formBtns > button {
+     width: 10em;
+     height: 30px;
+     margin-top: 3em;
+     font-size: 18px;
+}
+
+input {
+     font-size: 20px;
+}
+
+#product_order {
+     width: 11em;
+     font-size: 20px;
+}
+
+input#fName:focus:invalid,
+input#lName:focus:invalid,
+input#street:focus:invalid,
+input#city:focus:invalid,
+input#phone:focus:invalid,
+input#email:focus:invalid {
+     background: rgb(255, 232, 233);
+}
+
+input#fName:focus:valid,
+input#lName:focus:valid,
+input#street:focus:valid,
+input#city:focus:valid,
+input#phone:focus:valid,
+input#email:focus:valid {
+     background: rgb(220, 255, 220);
+}
