@@ -1,0 +1,11 @@
+Script started on Tue 30 May 2023 03:57:33 PM PDT
+]0;dkcomp341126@cs2:~[?1034h[dkcomp341126@cs2 ~]$ java smallprogram.[K
+Your first initial? M
+Your last initial? A
+Repeating 20 times.
+M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! M.A. likes Linux! 
+]0;dkcomp341126@cs2:~[dkcomp341126@cs2 ~]$ exit exit
+exit
+bash: exit: exit: numeric argument required
+
+Script done on Tue 30 May 2023 03:57:51 PM PDT
