@@ -1,0 +1,40 @@
+{
+    "summary": {
+        "total_packets": 116,
+        "total_data_transfer": 18959,
+        "bandwidth": "0.006 Mbps",
+        "top_protocols": [
+            [
+                "TCP",
+                59
+            ],
+            [
+                "TLS",
+                57
+            ]
+        ],
+        "top_src_ips": [
+            [
+                "34.120.160.131",
+                58
+            ],
+            [
+                "10.20.117.211",
+                58
+            ]
+        ],
+        "top_dest_ips": [
+            [
+                "10.20.117.211",
+                58
+            ],
+            [
+                "34.120.160.131",
+                58
+            ]
+        ],
+        "average_latency": "230.084 ms",
+        "average_jitter": "448.552 ms",
+        "top_dns": []
+    }
+}
