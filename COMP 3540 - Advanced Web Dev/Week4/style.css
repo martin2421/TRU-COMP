@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#heading {
+    height: 50px;
+    background-color: HoneyDew;
+}
+
+#menu-icon {
+    height: 50px; 
+    width: 50px;
+}
+
+#blanket {
+    position: fixed;
+    display: none;
+    opacity: 50%;
+    top: 0;
+    left: 0;
+    background-color: lightskyblue;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#dropdown-list {
+    height: 100vh;
+    background-color: lightgrey;
+}
+
+#menu-head {
+    list-style: none;
+    width: 50px;
+    text-align: center;
+    border: 1px solid black;
+    background-color: White;
+    position: relative;
+    left: 0px;
+}
+
+#menu-head:hover {
+    background-color: Grey;
+}
+
+#menu-head:hover > ul {
+    display: block;
+}
+
+#menu-head > ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+    background-color: White;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+#menu-head > ul > li:hover {
+    background-color: Grey;
+}
+
+#signin_box, #signup_box, #forgotpassword_box {
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    position: fixed;
+    top: calc(50% - 200px / 2);
+    left: calc(50% - 400px / 2);
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    border: 1px black solid;
+    display: none;
+    z-index: 99;
+}
+
+#signin_submit, #signup_submit, #forgotpassword_submit {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+#signin_cancel, #signup_cancel, #forgotpassword_cancel {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}

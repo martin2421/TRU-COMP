@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My First App</title>
+</head>
+
+<body>
+
+    <!-- Blanket used for background during popup windows -->
+    <div id="blanket"></div>
+
+    <!-- Heading -->
+    <div id="heading">
+        <h1 style="text-align:center">My First App</h1>
+    </div>
+
+    <!-- Dropdown List -->
+    <div id="dropdown-list">
+
+        <div style="height:100px;">
+            <li id="menu-head">
+                <img id="menu-icon" src="menu_icon.png">
+                <ul>
+                    <li id="signin">Sign In</li>
+                    <li id="signup">Sign Up</li>
+                    <li id="forgotpassword">Forgot Password</li>
+                </ul>
+            </li>
+        </div>
+
+        <div id="signin_box">
+            Sign In
+            <button id="signin_submit">Submit</button>
+            <button id="signin_cancel">Cancel</button>
+        </div>
+
+        <div id="signup_box">
+            Sign Up
+            <button id="signup_submit">Submit</button>
+            <button id="signup_cancel">Cancel</button>
+        </div>
+
+        <div id="forgotpassword_box">
+            Forgot Password
+            <button id="forgotpassword_submit">Submit</button>
+            <button id="forgotpassword_cancel">Cancel</button>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+    // Variables 
+    const menuHead = document.getElementById("menu-head");
+    const blanket = document.getElementById("blanket");
+    const signin = document.getElementById("signin");
+    const signup = document.getElementById("signup");
+    const forgotpassword = document.getElementById("forgotpassword");
+    const signin_box = document.getElementById("signin_box");
+    const signup_box = document.getElementById("signup_box");
+    const forgotpassword_box = document.getElementById("forgotpassword_box");
+    const forgotpassword_cancel = document.getElementById("forgotpassword_cancel");
+    const signup_cancel = document.getElementById("signup_cancel");
+    const signin_cancel = document.getElementById("signin_cancel");
+
+    // Event Listeners
+    menuHead.addEventListener("mouseenter", () => {
+        menuHead.style.backgroundColor = "Grey";
+    });
+
+    menuHead.addEventListener("mouseleave", () => {
+        menuHead.style.backgroundColor = "White";
+    });
+
+    signin.addEventListener("click", () => {
+        signin_box.style.display = "Block";
+        blanket.style.display = "Block";
+    });
+
+    signup.addEventListener("click", () => {
+        signup_box.style.display = "Block";
+        blanket.style.display = "Block";
+    });
+
+    forgotpassword.addEventListener("click", () => {
+        forgotpassword_box.style.display = "Block";
+        blanket.style.display = "Block";
+    });
+
+    forgotpassword_cancel.addEventListener("click", () => {
+        forgotpassword_box.style.display = "none";
+        blanket.style.display = "none";
+    });
+
+    signup_cancel.addEventListener("click", () => {
+        signup_box.style.display = "none";
+        blanket.style.display = "none";
+    });
+
+    signin_cancel.addEventListener("click", () => {
+        signin_box.style.display = "none";
+        blanket.style.display = "none";
+    });
+
+    blanket.addEventListener("click", () => {
+        blanket.style.display = "none";
+        signin_box.style.display = "none";
+        signup_box.style.display = "none";
+        forgotpassword_box.style.display = "none";
+    });
+
+</script>
+
+</html>

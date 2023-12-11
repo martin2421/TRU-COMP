@@ -1,0 +1,42 @@
+<html>
+
+<body>
+
+     <style>
+          #menu-container {
+               list-style: none;
+               padding: 0;
+               position: fixed;
+               left: 50px;
+               top: 50px;
+          }
+
+          #menu-container>ul {
+               list-style: none;
+               padding: 0;
+               width: 80px;
+               background-color: LightGrey;
+               display: none;
+               position: absolute;
+               top: 100%;
+               left: 0;
+          }
+
+          #menu-container:hover>ul {
+               display: block;
+          }
+
+          #menu-container>ul>li:hover {
+               background-color: LightBlue;
+          }
+     </style>
+     <li id='menu-container'><img id='menu-image' src='menu_icon.png'></img>
+          <ul>
+               <li id='menu-item-signin'>Sign In</li>
+               <li id='menu-item-signup'>Sign Up</li>
+          </ul>
+     </li>
+
+</body>
+
+</html>

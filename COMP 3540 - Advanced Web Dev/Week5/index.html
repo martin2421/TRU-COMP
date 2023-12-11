@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <h1>Calculator</h1>
+    <hr>
+    <p>Select operation type, enter two operands, and click the 'Submit' button.</p>
+
+    <form action="calculator.php" method="get" target="frame">
+
+        <select name="operation" id="operation">
+            <option value="addition">Addition</option>
+            <option value="subtraction">Subtraction</option>
+            <option value="multiplication">Multiplication</option>
+            <option value="division">Division</option>
+        </select> <br><br>
+
+        <input type="number" name="op1" id="op1"><br><br>
+        <input type="number" name="op2" id="op2"><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+    
+    <hr>
+
+    <p>The result that comes back from the Calculator Server:</p><br><br>
+
+    <iframe name="frame" frameborder="0" width="50px" height="50px" style="border: 2px solid black; text-align: center;">
+
+    </iframe>
+
+</body>
+</html>
