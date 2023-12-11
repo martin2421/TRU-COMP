@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">pacRat_good_empty</string>
+    <string name="title">Title</string>
+    <string name="date">Date of Release (dd/mm/yyyy)</string>
+    <string name="purchase">Date of Purchase (dd/mm/yyyy)</string>
+    <string name="desc">Description</string>
+    <string name="upload">Upload</string>
+    <string name="newfile">New File</string>
+    <string name="newdb">New Collection</string>
+    <string name="add_db">Add New Collection</string>
+    <string name="db_name">Collection Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

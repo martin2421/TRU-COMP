@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Unit Converter App</string>
+    <string name="title">Unit Convertor</string>
+    <string name="prompt">Enter celsius or fahrenheit</string>
+    <string name="result">RESULT</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="value">Value:</string>
+    <string name="convert">CONVERT</string>
+    <string name="enter_value">Enter value</string>
+</resources>

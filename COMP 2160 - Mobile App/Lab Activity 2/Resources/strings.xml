@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sum</string>
+    <string name="num1">Enter the first number</string>
+    <string name="num2">Enter the second number</string>
+    <string name="add">+</string>
+    <string name="subtract">-</string>
+    <string name="multiply">x</string>
+    <string name="divide">÷</string>
+    <string name="result">RESULT: </string>
+</resources>

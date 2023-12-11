@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Cities</string>
+
+    <string name="title_main">Canada City Preview</string>
+
+    <array name="cities">
+        <item>Select a City</item>
+        <item>Calgary</item>
+        <item>Edmonton</item>
+        <item>Kamloops</item>
+        <item>Montreal</item>
+        <item>Ottawa</item>
+        <item>Toronto</item>
+        <item>Vancouver</item>
+        <item>Victoria</item>
+        <item>Waterloo</item>
+        <item>Winnipeg</item>
+    </array>
+
+    <string name="calgary_weather">Weather: Partly Cloudy, 2°C</string>
+    <string name="calgary_population">Population: 1,306,780</string>
+
+    <string name="edmonton_weather">Weather: Partly Cloudy, 3°C</string>
+    <string name="edmonton_population">Population: 1,010,899</string>
+
+    <string name="kamloops_weather">Weather: Mostly Cloudy, 2°C</string>
+    <string name="kamloops_population">Population: 97,902</string>
+
+    <string name="montreal_weather">Weather: Mostly Cloudy, -1°C</string>
+    <string name="montreal_population">Population: 1,762,949</string>
+
+    <string name="ottawa_weather">Weather: Clear, -2°C</string>
+    <string name="ottawa_population">Population: 1,017,449</string>
+
+    <string name="toronto_weather">Weather: Mostly Cloudy, 1°C</string>
+    <string name="toronto_population">Population: 2,794,356</string>
+
+    <string name="vancouver_weather">Weather: Cloudy, 6°C</string>
+    <string name="vancouver_population">Population: 2,632,568</string>
+
+    <string name="victoria_weather">Weather: Mostly Cloudy, 4°C</string>
+    <string name="victoria_population">Population: 397,237</string>
+
+    <string name="waterloo_weather">Weather: Clear, -2°C</string>
+    <string name="waterloo_population">Population: 579,881</string>
+
+    <string name="winnipeg_weather">Weather: Mostly Cloudy, -1°C</string>
+    <string name="winnipeg_population">Population: 841,921</string>
+
+</resources>

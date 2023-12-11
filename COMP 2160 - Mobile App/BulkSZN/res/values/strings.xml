@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Bulk SZN</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="type_of_bulk">
+        <item>Select a Type</item>
+        <item>Cut</item>
+        <item>Regular</item>
+        <item>Clean</item>
+        <item>Dirty</item>
+    </string-array>
+
+    <string name="cut">Works by eating fewer calories than you burn while maintaining as much muscle mass as possible. In order to lose the fat, cardio is strongly recommended.</string>
+    <string name="regular">Works by maintaining a moderate exercise regimen while eating large amounts of healthy foods. Whole purpose is to add weight by eating more calories than you burn. Avoid soda, fast foods, and empty calories foods.</string>
+    <string name="clean">Works at a normal pace. At the same time, you eat a lot of food, but only foods that are nutritious and relatively low in fat. Lean meats like turkey are a great choice.</string>
+    <string name="dirty">Works by eating the most high-calorie foods that you can get. You don\'t need to worry too much about the fat content or the relative nutritional content. Goal is to convert calories into muscle. Requires working out frequently and at high intensities.</string>
+    <string name="protein_info">Eating protein is crucial for bulking up because it provides the building blocks that our bodies need to repair and grow muscle tissue.\n\nWhen we lift weights or engage in other types of resistance training, we create tiny tears in our muscle fibers.\n\nOur bodies then use protein to rebuild and strengthen those fibers, which leads to muscle growth over time.\n\nWithout sufficient protein intake, our bodies cannot effectively repair and grow muscle tissue, which can limit our ability to gain size and strength.</string>
+
+</resources>
