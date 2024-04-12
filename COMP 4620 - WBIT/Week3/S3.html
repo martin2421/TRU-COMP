@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Async, and Await</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align:center">Promise, Async, and Await</h1>
+    <hr>
+    <h2>Echo</h2>
+        Message: <input id="msg"><br>
+        <button id="echo-promise">Echo with Promise</button><br>
+        <button id="echo-async-await">Echo with async and await</button><br>
+        Echoed message: <span id="echoed-message"></span>
+    <hr>
+    <h2>Calculator</h2>
+        <span>Operand1: <input id="opr1"><span><br>
+        <span>Operand2: <input id="opr2"><span><br>
+        <span>Operation: <input id="operation" placeholder="add, sub, mult, or div"><span><br>
+        <button id="cal-promise">Calculate with Promise</button><br>
+        <button id="cal-async-await">Calculate with async and await</button><br>
+        Computation result: <span id="computation-result"></span>
+    
+    <script>
+
+        // Function that sends/receives message from server using promise
+        let echoPromise = (message) => {
+            return new Promise((resolve) => {
+                $.get("server_echo.php", {
+                    message: message
+                }, (response) => {
+                    resolve(response);
+                });
+            });
+        };
+
+        // Function that sends/receives message from server using async/await
+        let echoAsyncAwait = async (message) => {
+            return new Promise((resolve) => {
+                $.get("server_echo.php", {
+                    message: message
+                }, (response) => {
+                    resolve(response);
+                });
+            });
+        };
+
+        // Echo with promise
+        $("#echo-promise").click(() => {
+            let msg = $("#msg").val();
+            echoPromise(msg).then((result) => {
+                $("#echoed-message").text(result);
+            });
+        });
+
+        // Echo with async/await
+        $("#echo-async-await").click(async () => {
+            let msg = $("#msg").val();
+            let result = await echoAsyncAwait(msg);
+            $("#echoed-message").text(result);
+        });
+
+        /////////////////////////////////////////////////////////////
+
+        // Function that sends/receives message from server using promise
+        let calculatePromise = (opr1, opr2, operation) => {
+            return new Promise((resolve) => {
+                $.get("server_calculator.php", {
+                    opr1: opr1,
+                    opr2: opr2,
+                    operation: operation
+                }, (response) => {
+                    resolve(response);
+                });
+            });
+        };
+
+        // Function that sends/receives message from server using async/await
+        let calculateAsyncAwait = async (opr1, opr2, operation) => {
+            return new Promise((resolve) => {
+                $.get("server_calculator.php", {
+                    opr1: opr1,
+                    opr2: opr2,
+                    operation: operation
+                }, (response) => {
+                    resolve(response);
+                });
+            });
+        };
+
+
+        // Calculate with promise
+        $("#cal-promise").click(() => {
+            let opr1 = parseFloat($("#opr1").val());
+            let opr2 = parseFloat($("#opr2").val());
+            let operation = $("#operation").val();
+            calculatePromise(opr1, opr2, operation).then((result) => {
+                $("#computation-result").text(result);
+            });
+        });
+
+        // Calculate with async/await
+        $("#cal-async-await").click(async () => {
+            let opr1 = parseFloat($("#opr1").val());
+            let opr2 = parseFloat($("#opr2").val());
+            let operation = $("#operation").val();
+            let result = await calculateAsyncAwait(opr1, opr2, operation);
+            $("#computation-result").text(result);
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Async, and Await</title>
+    <script src="tjq.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align:center">Promise, Async, and Await</h1>
+    <hr>
+    <h2>Echo</h2>
+        Message: <input id="msg"><br>
+        <button id="echo-promise">Echo with Promise</button><br>
+        <button id="echo-async-await">Echo with async and await</button><br>
+        Echoed message: <span id="echoed-message"></span>
+    <hr>
+    <h2>Calculator</h2>
+        <span>Operand1: <input id="opr1"><span><br>
+        <span>Operand2: <input id="opr2"><span><br>
+        <span>Operation: <input id="operation" placeholder="add, sub, mult, or div"><span><br>
+        <button id="cal-promise">Calculate with Promise</button><br>
+        <button id="cal-async-await">Calculate with async and await</button><br>
+        Computation result: <span id="computation-result"></span>
+    
+    <script>
+
+        // Check if document is ready
+        $tjq(document).ready(() => {
+            alert("Document Ready!");
+        });
+
+        // Function that sends/receives message from server using promise
+        let echoPromise = (message) => {
+            return new Promise((resolve) => {
+                $tjq.get("server_echo.php?message=" + message, function (response) {
+                    resolve(response);
+                });
+            });
+        };
+
+        // Function that sends/receives message from server using async/await
+        let echoAsyncAwait = async (message) => {
+            return new Promise((resolve) => {
+                $tjq.get("server_echo.php?message=" + message, function (response) {
+                    resolve(response);
+                });
+            });
+        };
+
+        // Echo with promise
+        $tjq("#echo-promise").click(() => {
+            let msg = $tjq("#msg").val();
+            let url = 'server_echo.php?message=' + msg;
+            $tjq('#echoed-message').load(url);
+            $tjq('#echoed-message').css('background-color', 'cyan');
+            
+            /*
+            echoPromise(msg).then((result) => {
+                $tjq("#echoed-message").html(result);
+            });
+            */
+        });
+
+        // Echo with async/await
+        $tjq("#echo-async-await").click(async () => {
+            let msg = $tjq("#msg").val();
+            let result = await echoAsyncAwait(msg);
+            $tjq("#echoed-message").html(result);
+        });
+
+        /////////////////////////////////////////////////////////////
+
+        // Function that sends/receives message from server using promise
+        let calculatePromise = (opr1, opr2, operation) => {
+            return new Promise((resolve) => {
+                const params = `opr1=${opr1}&opr2=${opr2}&operation=${operation}`;
+                $tjq.get("server_calculator.php?" + params, function (response) {
+                    resolve(response);
+                });
+            });
+        };
+
+        // Function that sends/receives message from server using async/await
+        let calculateAsyncAwait = async (opr1, opr2, operation) => {
+            return new Promise((resolve) => {
+                let params = `opr1=${opr1}&opr2=${opr2}&operation=${operation}`;
+                $tjq.get("server_calculator.php?" + params, function (response) {
+                    resolve(response);
+                });
+            });
+        };
+
+
+        // Calculate with promise
+        $tjq("#cal-promise").click(() => {
+            let opr1 = parseFloat($tjq("#opr1").val());
+            let opr2 = parseFloat($tjq("#opr2").val());
+            let operation = $tjq("#operation").val();
+            calculatePromise(opr1, opr2, operation).then((result) => {
+                $tjq("#computation-result").html(result);
+            });
+        });
+
+        // Calculate with async/await
+        $tjq("#cal-async-await").click(async () => {
+            let opr1 = parseFloat($tjq("#opr1").val());
+            let opr2 = parseFloat($tjq("#opr2").val());
+            let operation = $tjq("#operation").val();
+            let result = await calculateAsyncAwait(opr1, opr2, operation);
+            $tjq("#computation-result").html(result);
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TRUJS Echo and Calculator App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="trujs.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align:center">TRUJS Echo and Calculator App</h1>
+    <hr>
+
+    <!-- Echo App -->
+    <h2>Echo</h2>
+    <div trujs-app="echo">
+        Message: <input id="message" trujs-model="x"><br>
+        Echoed message: <span id="echoed-message" trujs-bind="x">$trujs.x</span>
+    </div>
+    <hr>
+
+    <!-- Calculator App -->
+    <h2>Calculator</h2>
+    <div trujs-app="calc">
+        <span>Operand1: <input id="operand1" trujs-model-a="a"></span><br>
+        <span>Operand2: <input id="operand2" trujs-model-a="b"></span><br>
+        <span>Operation: <input id="operation" placeholder="add, sub, mul, or div" trujs-model-a="c"></span><br>
+        Computation result:
+        <span id="computation-result" trujs-bind-a="a, b, c">calc($trujs.a, $trujs.b,
+            $trujs.c)</span>
+    </div>
+
+    <script>
+
+        // function used to calculate the result
+        function calc(o1, o2, op) {
+            o1 = Number(o1);
+            o2 = Number(o2);
+            if (op == "add") return o1 + o2;
+            else if (op == "sub") return o1 - o2;
+            else if (op == "mul") return o1 * o2;
+            else if (op == "div") return o1 / o2;
+            else return "";
+        }
+
+        window.addEventListener("load", () => {
+
+            $trujs._initialize();
+
+            /*
+                ECHO APP
+            */
+
+            objs = document.querySelectorAll("div[trujs-app=echo] input[trujs-model]");
+            for (let i = 0; i < objs.length; i++) {
+                let model = objs[i].getAttribute("trujs-model").trim();
+                let value = objs[i].value;
+                $trujs[model] = value;
+                $trujs._expressions[model] = [];
+            }
+
+            objs = document.querySelectorAll("div[trujs-app=echo] span[trujs-bind]");
+            console.log("OBJECTS:");
+            console.log(objs);
+            for (let i = 0; i < objs.length; i++) {
+                let models = objs[i].getAttribute("trujs-bind").trim().split(/, */);
+                console.log("MODELS:");
+                console.log(models);
+                for (let j = 0; j < models.length; j++) {
+                    let model = models[j];
+                    console.log("MODEL:");
+                    console.log(model);
+                    let objExpr = {
+                        output: objs[i],
+                        expr: objs[i].innerHTML
+                    };
+                    $trujs._expressions[model].push(objExpr);
+                }
+            }
+
+            objs = document.querySelectorAll("div[trujs-app=echo] input[trujs-model]");
+            for (let i = 0; i < objs.length; i++) {
+                let model = objs[i].getAttribute("trujs-model").trim();
+                objs[i].addEventListener("keyup", () => {
+                    $trujs[model] = objs[i].value;
+                    for (let j = 0; j < $trujs._expressions[model].length; j++) {
+                        let objExpr = $trujs._expressions[model][j];
+                        objExpr.output.innerHTML = eval(objExpr.expr);
+                    }
+                });
+            }
+
+            /*
+                CALCULATOR APP
+            */
+
+            objs2 = document.querySelectorAll("div[trujs-app=calc] input[trujs-model-a]");
+            for (let i = 0; i < objs2.length; i++) {
+                let model = objs2[i].getAttribute("trujs-model-a").trim();
+                let value = objs2[i].value;
+                $trujs[model] = value;
+                $trujs._expressions[model] = [];
+            }
+
+            objs2 = document.querySelectorAll("div[trujs-app=calc] span[trujs-bind-a]");
+            for (let i = 0; i < objs2.length; i++) {
+                let models = objs2[i].getAttribute("trujs-bind-a").trim().split(/, */);
+                for (let j = 0; j < models.length; j++) {
+                    let model = models[j];
+                    let objExpr = {
+                        output: objs2[i],
+                        expr: objs2[i].innerHTML
+                    };
+                    $trujs._expressions[model].push(objExpr);
+                }
+            }
+
+            objs2 = document.querySelectorAll("div[trujs-app=calc] input[trujs-model-a]");
+            for (let i = 0; i < objs2.length; i++) {
+                let model = objs2[i].getAttribute("trujs-model-a").trim();
+                objs2[i].addEventListener("keyup", () => {
+                    $trujs[model] = objs2[i].value;
+                    for (let j = 0; j < $trujs._expressions[model].length; j++) {
+                        let objExpr = $trujs._expressions[model][j];
+                        objExpr.output.innerHTML = eval(objExpr.expr);
+                    }
+                });
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

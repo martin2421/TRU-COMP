@@ -1,0 +1,300 @@
+node:events:498
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8022
+    at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+    at listenInCluster (node:net:1378:12)
+    at Server.listen (node:net:1465:7)
+    at Object.start (/home2/students/w4matanacio/public_html/Tests/server3.js:9:12)
+    at Object.<anonymous> (/home2/students/w4matanacio/public_html/Tests/index3.js:3:8)
+    at Module._compile (node:internal/modules/cjs/loader:1103:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1357:8)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 8022
+}
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/favicon.ico
+You can send a error message back.
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /home2/students/w4matanacio/public_html/index.html
+You can send a error message back.
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/index.html
+You can send the file content back.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX.HTML</title>
+</head>
+<body>
+
+    <h1>THIS IS INDEX.HTML</h1>
+    
+</body>
+</html>
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html
+You can send the file content back.
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Echo with Node.js Web Server</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">Echo with Node.js Web Server</h1>
+    <hr>
+    <form action="" method="">
+        Message: <input id="msg-input">
+        <br>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+        
+</body>
+</html>
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html
+You can send the file content back.
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Echo with Node.js Web Server</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">Echo with Node.js Web Server</h1>
+    <hr>
+    <form action="" method="">
+        Message: <input id="msg-input">
+        <br>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+        
+</body>
+</html>
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html
+You can send the file content back.
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Echo with Node.js Web Server</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">Echo with Node.js Web Server</h1>
+    <hr>
+    <form action="" method="">
+        Message: <input id="msg-input">
+        <br>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+        
+</body>
+</html>
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/version/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/.vscode/sftp.json
+You can send a error message back.
+PATHNAME: /var/www/html/about/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/debug/default/view/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/v2/_catalog/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+You can send a error message back.
+PATHNAME: /var/www/html/server-status/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/_all_dbs/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/.DS_Store
+You can send a error message back.
+PATHNAME: /var/www/html/.env
+You can send a error message back.
+PATHNAME: /var/www/html/.git/config/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/config.json
+You can send a error message back.
+PATHNAME: /var/www/html/telescope/requests/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/favicon.ico
+You can send a error message back.
+PATHNAME: /home2/students/w4matanacio/public_html/index.html
+You can send a error message back.
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html
+You can send the file content back.
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Echo with Node.js Web Server</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">Echo with Node.js Web Server</h1>
+    <hr>
+    <form action="" method="">
+        Message: <input id="msg-input">
+        <br>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+        
+</body>
+</html>
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html
+You can send the file content back.
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Echo with Node.js Web Server</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">Echo with Node.js Web Server</h1>
+    <hr>
+    <form action="" method="">
+        Message: <input id="msg-input">
+        <br>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+        
+</body>
+</html>
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html
+You can send the file content back.
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Echo with Node.js Web Server</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">Echo with Node.js Web Server</h1>
+    <hr>
+    <form action="" method="">
+        Message: <input id="msg-input">
+        <br>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+        
+</body>
+</html>
+PATHNAME: /var/www/html/favicon.ico
+You can send a error message back.
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html
+You can send the file content back.
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Echo with Node.js Web Server</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">Echo with Node.js Web Server</h1>
+    <hr>
+    <form action="" method="">
+        Message: <input id="msg-input">
+        <br>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+        
+</body>
+</html>
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html
+You can send the file content back.
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Echo with Node.js Web Server</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">Echo with Node.js Web Server</h1>
+    <hr>
+    <form action="" method="">
+        Message: <input id="msg-input">
+        <br>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+        
+</body>
+</html>
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html
+You can send the file content back.
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Echo with Node.js Web Server</title>
+</head>
+
+<body>
+    <h1 style="text-align:center">Echo with Node.js Web Server</h1>
+    <hr>
+    <form action="" method="">
+        Message: <input id="msg-input">
+        <br>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+        
+</body>
+</html>
+PATHNAME: /var/www/html/favicon.ico
+You can send a error message back.
+PATHNAME: /home2/students/w4matanacio/public_html/Tests/echo_server.html/index.html
+You can send a error message back.
+PATHNAME: /home2/students/comp3540test/public_html/test.html
+You can send the file content back.
+<h1>Hello World!</h1>
+<p>This world is better with you.</p>
+
+PATHNAME: /home2/students/comp3540test/public_html/test.html
+You can send the file content back.
+<h1>Hello World!</h1>
+<p>This world is better with you.</p>
+
+PATHNAME: /var/www/html/test.html
+You can send the file content back.
+<h1>Hello World!</h1>
+<p>This world is better with you.</p>
+
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/favicon.ico
+You can send a error message back.
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/index.html
+You can send a error message back.
+PATHNAME: /var/www/html/favicon.ico
+You can send a error message back.
