@@ -21,7 +21,8 @@
 using namespace std; // used for standard namespace
 // using std::cout; // use only cout, cin, endl, string, vector, etc.
 
-// :: - binary scope resolution operator
+// :: - binary scope resolution operator, 
+// used to define the member of a class externally
 
 // function overload - same name, different parameters
 int add(int a, int b) { return a + b; }
@@ -37,6 +38,8 @@ char c = 'A';
 double d = 3.14;
 float f = 3.14f;
 bool b = true;
+
+// % - modulus operator can only be used with integers
 
 // enum - user defined data type
 enum DayOfWeek
@@ -57,11 +60,20 @@ int a = 10;
 double b = a;   // implicit conversion
 int c = (int)b; // explicit conversion
 
+/*
+     types of loops:
+     * for loop
+     * while loop
+     * do-while loop
+     * range-based for loop (C++11)
+*/ 
+
+
 // null types
 string *nullpointer = nullptr; // null pointer of type string*
 string nullobj = NULL;         // null object of type string
 
-// struct - user defined data type, everything is public
+// struct - user defined data type, everything is public, cannot be used in inheritance
 struct Point
 {
      int x, y;    // declare members x and y
@@ -74,7 +86,7 @@ struct Point
 // how to create a class
 class Human
 {
-protected:
+protected: // access specifier
      int ssn; // protected member - can be accessed by child class
 
 private:
@@ -82,13 +94,16 @@ private:
      string name;
 
 public:
-     Human() : age(0), name("noname") {} // default constructor
+     // default constructor
+     Human() : age(0), name("noname") {} 
      // or Human() { age = 0; name = "noname"; }
      // or Human() = default
 
-     // explicit makes it so that the constructor must be called explicitly, 
-     // not implicitly, for example, Human h = 10; will not work, 
-     // but Human h(10) will, and so will Human h = Human(10)
+     /*
+          explicit makes it so that the constructor must be called explicitly, 
+          not implicitly, for example, Human h = 10; will not work, 
+          but Human h(10) will, and so will Human h = Human(10)
+     */
      explicit Human(int age) // parameterized constructor
      {
           // this is a pointer to the object that called the function
@@ -111,7 +126,13 @@ public:
      // function called using 'Human::display3()' without creating an object
      static void display3() { cout << "display3() called"; }
 
-     ~Human() {} // destructor - called when object is destroyed
+     /*
+          destructor - called when object is destroyed, 
+          no parameter, no overloading, automatically called
+          when object goes out of scope, or delete is called
+          objects are destroyed in reverse order of creation
+     */
+     ~Human() {} 
 
 }; // remember the semicolon
 
@@ -140,6 +161,7 @@ class Vector2
 public:
      int x, y;
 
+     // default constructor
      Vector2(int a, int b) : x(a), y(b) {}
 
      // operator+ is a key word,  allows Vector2 + Vector2,
@@ -147,6 +169,14 @@ public:
      Vector2 operator+(Vector2 &v)
      {
           return Vector2(x + v.x, y + v.y);
+     }
+
+     // overload insertion operator
+     // allows cout << Vector2
+     friend ostream& operator<<(ostream& stream, Vector2 &v)
+     {
+          stream << v.x << ", " << v.y;
+          return stream;
      }
 
      // friend function - can access private members of a class
@@ -561,3 +591,43 @@ void speed(int speed)
           // or throw overSpeed("Over speed");
           // or throw "Over speed";
 }
+
+// if a class contains static variables, then every object of the class has 
+// its copy of static variable - FALSE
+
+// static member functions can only call other static functions - TRUE
+
+// inline functions speed up execution despite increasing code size - TRUE
+
+// a compiler provides a default constructor if you don't provide one - TRUE
+
+// pointer to member declaratory (::*)
+
+// function overloading is an example of function overriding
+
+// polymorphism is the ability to take many forms. defining a function with 
+// same prototype in bas class & derived class
+
+// a reference is stored on the stack, 'new' is stored on the heap
+
+// Argv[0] is the name of the program
+
+/*
+     In an assignment statement:
+     * the lvalue must always be a variable
+     * the rvalue might be a constant, a variable, an expression or any combination of these
+     * the assignment always takes place from right to left and never the other way
+*/
+
+// if header is not included, error at link time
+
+// inheritance - defining new classes from the existing classes
+
+// when a pointer is defined, it reserves memory for the pointer, not the object
+
+// it is not C++ statement but the directive for the preprocessor - TRUE
+
+// it is possible to define a new class inside another class - TRUE
+
+// overloading of the function templates is possible - TRUE
+
