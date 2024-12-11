@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Callback</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align:center">Non-Blocking Programming</h1>
+
+    <hr>
+
+    <h2>Echo</h2>
+    Message: <input id="message"><br>
+    <button id="echo">Echo</button><br>
+    Echoed message: <span id="echoed-message"></span>
+
+    <hr>
+
+    <h2>Calculator</h2>
+    <span>Operand1: <input id="operand1"></span><br>
+    <span>Operand2: <input id="operand2"></span><br>
+    <span>Operation: <input id="operation" placeholder="addition, subtraction, multiplication, or division"></span><br>
+    <button id="calculate">Calculate</button><br>
+    Computation result:
+    <span id="computation-result"></span>
+
+    <script>
+
+        // echo function
+        const echo = (msg, cb) => {
+            let uri = `https://cs.tru.ca/~mlee/comp4980 ACC/Fall2024/server_echo.php?message=${msg}`;
+            $.get(uri, (data) => {
+                cb(data);
+            });
+        }
+
+        // calculator function
+        const calculator = (op1, op2, opr, cb) => {
+            let uri = `https://cs.tru.ca/~mlee/comp4980 ACC/Fall2024/server_calculator.php?operand1=${op1}&operand2=${op2}&operation=${opr}`;
+            $.get(uri, (data) => {
+                cb(data);
+            });
+        };
+
+        // echo event listener
+        document.getElementById("echo").addEventListener("click", () => {
+            let message = document.getElementById("message").value;
+            message = "Message: " + message;
+            echo(message, (result) => {
+                document.getElementById("echoed-message").innerHTML = result;
+            });
+        });
+
+        // calculator event listener
+        document.getElementById("calculate").addEventListener("click", () => {
+            let operand1 = document.getElementById("operand1").value;
+            let operand2 = document.getElementById("operand2").value;
+            let operation = document.getElementById("operation").value;
+
+            calculator(operand1, operand2, operation, (result) => {
+                document.getElementById("computation-result").innerHTML = result;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

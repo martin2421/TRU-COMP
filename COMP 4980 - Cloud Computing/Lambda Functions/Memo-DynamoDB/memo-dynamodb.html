@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        * {
+            font-size:xx-large;
+        }
+        #title {
+            font-size:2em;
+            text-align: center;
+        }
+        #container {
+            width:100vw;
+            height:100vh;
+        }
+        #head {
+            position:relative;
+            margin:auto;
+            text-align:center;
+        }
+        #read {
+            width: 400px;
+            text-align: center;
+        }
+        table {
+            position:relative;
+            top:40px;
+            margin:auto;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid #bbbbbb;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    
+    <script>
+        window.addEventListener('load', function() {
+            document.getElementById('add').addEventListener('click', addDB);
+            document.getElementById('search').addEventListener('click', searchDB);
+            //document.getElementById('all').addEventListener('click', displayAllDB);
+        });
+        
+        function addDB()
+        {
+            var new_memo = document.getElementById('read').value;
+            new_memo = new_memo.trim();
+            if (new_memo == '')
+                return;
+            
+            //alert('before ADD ' + new_memo + ' to ' + window.location.protocol +  "://" + window.location.hostname + location.pathname);
+            //$.post(window.location.protocol +  "://" + window.location.hostname + location.pathname,
+            $.post('',
+                {command: "ADD", memo: new_memo},
+                function(data) {
+                    alert(data);
+                }
+            )
+        }
+        
+        function searchDB()
+        {
+            var search_term = document.getElementById('read').value;
+            search_term = search_term.trim();
+
+            //alert('before SEARCH ' + search_term + ' to ' + window.location.protocol +  "://" + window.location.hostname + location.pathname);
+            //$.post(window.location.protocol +  "://" + window.location.hostname + location.pathname,
+            $.post('',
+                {command: "SEARCH", term: search_term},
+                function(data) {
+                    data = JSON.parse(data);
+                    alert('SEARCH result: ' + JSON.stringify(data));
+                    displayDB(data);
+                }
+            )
+        }
+        
+        function displayAllDB()
+        {
+        /*
+            //alert('before READ from ' + window.location.protocol +  "://" + window.location.hostname + location.pathname + "?" + "command=READ");
+            $.get(window.location.protocol +  "://" + window.location.hostname + location.pathname + "?" + "command=READ", function(data) {
+                //alert(JSON.stringify(data) + '; ' + data.length);
+                displayDB(data);
+            })
+        */
+            //$.post(window.location.protocol +  "://" + window.location.hostname + location.pathname,
+            $.post('',
+                {command: "READ"},
+                function(data) {
+                    data = JSON.parse(data);
+                    alert('READ result: ' + JSON.stringify(data));
+                    displayDB(data);
+                }
+            )
+        }
+        
+        function displayDB(data)
+        {
+            var str = '<table>';
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].ID >= 0) {
+                    str += '<tr>';
+                    var memo_id = 'tru-memo-' + data[i].ID;
+                    str += "<td>" + data[i].Memo + '</td>';
+                    str += "<td><button id='" + memo_id + "' type='button' onclick='deleteMemo(event);'>Delete</button></td>";
+                    str += '</tr>';
+                }
+            }
+            str += '</table>';
+            //alert('displayDB(): ' + data.length + ", " + data[0].Id + ", " + str);
+
+            document.getElementById('memo').innerHTML = str;
+        }
+        
+        function deleteMemo(e)
+        {
+            var id = e.target.id;
+            id = id.split('-');
+            id = id[2];  // tru-memo-###
+            
+            //alert('before DELETE ' + id + ' to ' + window.location.protocol +  "://" + window.location.hostname + location.pathname);
+            //$.post(window.location.protocol +  "://" + window.location.hostname + location.pathname,
+            $.post('',
+                {command: "DELETE", id: id},
+                function(data) {
+                    alert(data);
+                }
+            )
+
+            //$('#memo > table').remove($(e.target).index());
+            $(e.target).parent().parent().remove();
+        }
+    </script>
+</head>
+
+<body>
+<h1 id='title'>Memo with DynamoDB</h1>
+
+<div id='container'>
+    <div id='head'>
+        <input id='read'>
+        <button id='add' type='button'>Add</button>
+        <button id='search' type='button'>Search</button>
+        <!--
+        <button id='all' type='button'>All</button>
+        -->
+    </div>
+    <div id='memo'>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Async and Await</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align:center">Non-Blocking Programming</h1>
+
+    <hr>
+
+    <h2>Echo</h2>
+    Message: <input id="message"><br>
+    <button id="echo-promise">Echo with Promise</button><br>
+    Echoed message: <span id="echoed-message"></span>
+
+    <hr>
+
+    <h2>Calculator</h2>
+    <span>Operand1: <input id="operand1"></span><br>
+    <span>Operand2: <input id="operand2"></span><br>
+    <span>Operation: <input id="operation" placeholder="addition, subtraction, multiplication, or division"></span><br>
+    <button id="calculate-async-await">Calculate with Async and Await</button><br>
+    Computation result:
+    <span id="computation-result"></span>
+
+    <script>
+
+        // echo function
+        const echoPromise = (msg) => {
+            let uri = `https://cs.tru.ca/~mlee/comp4980 ACC/Fall2024/server_echo.php?message=${msg}`;
+            return new Promise((resolve) => {
+                $.get(uri, (data) => {
+                    resolve(data);
+                });
+            });
+        }
+
+        // echo event listener
+        document.getElementById("echo-promise").addEventListener("click", () => {
+            let message = document.getElementById("message").value;
+            echoPromise(message).then((result) => {
+                document.getElementById("echoed-message").innerHTML = result;
+            });
+        });
+
+        ////////////////////////////////////////////////////////////////
+
+        // calculator function
+        const calculatorAsyncAwait = async (op1, op2, opr) => {
+            let uri = `https://cs.tru.ca/~mlee/comp4980 ACC/Fall2024/server_calculator.php?operand1=${op1}&operand2=${op2}&operation=${opr}`;
+            let response = await $.get(uri);
+            return response;
+        };
+
+        // calculator event listener
+        document.getElementById("calculate-async-await").addEventListener("click", async () => {
+            let operand1 = document.getElementById("operand1").value;
+            let operand2 = document.getElementById("operand2").value;
+            let operation = document.getElementById("operation").value;
+
+            let result = await calculatorAsyncAwait(operand1, operand2, operation);
+            document.getElementById("computation-result").innerHTML = result;
+        });
+    </script>
+
+</body>
+
+</html>
